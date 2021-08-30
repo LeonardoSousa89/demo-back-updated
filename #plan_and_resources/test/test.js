@@ -13,7 +13,7 @@ function dataTest(){
     createData(info,message,'li')
     createData(info,message,'option')
 }
-
+//dataTest()
 
 function data(){
     let search = doc.querySelector('#sc')
