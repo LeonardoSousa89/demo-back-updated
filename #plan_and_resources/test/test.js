@@ -16,7 +16,6 @@ function dataTest(){
 
 
 function data(){
-    let info = doc.querySelector('.info')
     let search = doc.querySelector('#sc')
 
     search.addEventListener('change',()=>{
@@ -30,30 +29,10 @@ function data(){
                     .then(data => data.json())
                     .then(data => {
                         data.map(e=>{ 
-                            
-                            let idBk   = e.id
-                            let nameBk = e.name
+                            let idBk   = 'ID:'+ e.id + ','
+                            let nameBk = 'NAME:'+ e.name + ','
 
-                            createData(info,idBk,'strong')
-                            createData(info,nameBk,'strong')
-                            console.log(info.childNodes)
-
-                           /*if(info.childNodes){
-                                console.log(info.childNodes)
-                           }*/
-
-                           //Noah bennet
-
-                           if(info.children){
-                            console.log(info.children)
-                            }
-
-                            if(info.children == '' || info.children == null){
-                                console.log(null)
-                            }
-
-                            console.log(info.value)
-                           
+                            searchFunc(idBk,nameBk)                         
                         })
                     })
                     .catch(err => console.log(err))
@@ -69,11 +48,32 @@ function createData(positioned,element,object){
     positioned.append(ob)
 }
 
-/**
- * div = info
- * 
- * 
- * a div não possui valores nem preenchidos,
- * mas os dados se torão nós filhos.
- * 
- */
+
+function searchFunc(nodeId, nodeName){
+    let info = doc.querySelector('.info')
+    let search = doc.querySelector('#sc')
+
+    search.addEventListener('keyup',()=>{
+        if(search.value == ''){
+            info.textContent = ''
+
+            console.log(true,'is empty!')
+            console.log(info.textContent = '')
+        }else{
+            let searched = ''
+            let data = [nodeId, nodeName]
+
+            for(let i in data){
+                searched += "<ul>" + data[i] + "</ul> "
+                info.innerHTML = searched
+            }
+
+
+            console.log(false,'no empty!')
+            console.log( info.innerHTML = searched)
+        }
+    })
+}
+
+
+ 
