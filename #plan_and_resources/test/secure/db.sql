@@ -28,11 +28,6 @@ CALL authentication();
 
 DELETE FROM login WHERE user = 'mendesDev';
 DELETE FROM login WHERE user = 'mendesSousa';
+DELETE FROM login WHERE user = 'test';
+DELETE FROM login WHERE user = 'devfull';
 
-/*
-    mendesDev
-    1234
-
-    mendesSousa
-    1234
-*/

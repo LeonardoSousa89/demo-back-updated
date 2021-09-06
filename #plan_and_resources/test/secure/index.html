@@ -44,10 +44,20 @@
           
             fetch(url,config)
                         .then(login => console.log(login.json()))
-                        .then(login => login)
+                        .then(login => {
+                                login
+                                clear()
+                            })
                         .catch(_ => console.log('erro ao inserir os dados!'))
         }
 
+        function clear(){
+            let user    = doc.querySelector('#user')
+            let pass    = doc.querySelector('#pass')
+
+            user.value = '' 
+            pass.value = ''
+        } 
     </script>
 </body>
 </html>
