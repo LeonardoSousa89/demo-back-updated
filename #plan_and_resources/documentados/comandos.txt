@@ -1,4 +1,4 @@
-instalações:
+﻿instalações:
  npm i typescript --save-dev
  npm i nodemon
  npm i knex
@@ -33,3 +33,5 @@ postgres:
  \c [nome-do-banco]
  \dt
  \q
+babel:
+ nodemon --exec babel-node [caminho-do-arquivo]
