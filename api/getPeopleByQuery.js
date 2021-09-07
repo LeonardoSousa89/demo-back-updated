@@ -1,4 +1,6 @@
-const knex = require('../knex/knx')
+const dev  = process.env.NODE_ENV     || 'development'
+const prod = process.env.DATABASE_URL || 'production'
+const knex = require('../knex/knx')[dev]
 
 module.exports = app => {
     const getByQueryDataName = async(req, res) => {

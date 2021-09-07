@@ -1,3 +1,0 @@
-a busca foi feita para somente um retorno,
-estudarei buscas port grupos e criarei buscas por
-endpoint no backend e bancos de dados.
